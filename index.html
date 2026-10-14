@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de impressão em 3D</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="calculator.js" defer></script>
+</head>
+<body>
+  <main class="calculator">
+    <header class="hero-banner">
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 220 190" fill="none">
+          <defs>
+            <linearGradient id="printer-frame" x1="25" y1="20" x2="155" y2="175" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#3767c9"></stop>
+              <stop offset="1" stop-color="#101c3d"></stop>
+            </linearGradient>
+            <linearGradient id="print-cube" x1="85" y1="77" x2="139" y2="137" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#42edff"></stop>
+              <stop offset=".52" stop-color="#4c67ff"></stop>
+              <stop offset="1" stop-color="#a23aff"></stop>
+            </linearGradient>
+            <linearGradient id="print-glow" x1="60" y1="138" x2="145" y2="155" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#32d8ff" stop-opacity=".8"></stop>
+              <stop offset="1" stop-color="#7852ff" stop-opacity=".2"></stop>
+            </linearGradient>
+            <filter id="cube-shadow" x="63" y="60" width="100" height="112" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+              <feGaussianBlur stdDeviation="9"></feGaussianBlur>
+            </filter>
+          </defs>
+          <ellipse cx="108" cy="167" rx="75" ry="11" fill="#0c1633"></ellipse>
+          <path d="M40 34a9 9 0 0 1 9-9h78a9 9 0 0 1 9 9v11h-9V35H49v11h-9V34Z" fill="url(#printer-frame)" stroke="#5689ed" stroke-width="2"></path>
+          <path d="M34 45h108v119a8 8 0 0 1-8 8H42a8 8 0 0 1-8-8V45Z" fill="#101a36" stroke="#4778d9" stroke-width="3"></path>
+          <path d="M45 53h13v100H45zM118 53h13v100h-13z" fill="url(#printer-frame)"></path>
+          <path d="M58 53h60v7H58zM58 146h60v7H58z" fill="#243d72"></path>
+          <path d="M64 60h48v79H64z" fill="#101d41" stroke="#274276" stroke-width="2"></path>
+          <path d="M78 42h26v6H78z" fill="#5a86e8"></path>
+          <path d="M89 48h5v19h-5z" fill="#77a8ff"></path>
+          <path d="M85 66h13l-3 9h-7l-3-9Z" fill="#b6d2ff"></path>
+          <path d="M91.5 75v7" stroke="#38e5ff" stroke-width="2"></path>
+          <path d="M58 139h60l13 13H45l13-13Z" fill="url(#print-glow)" opacity=".9"></path>
+          <path d="m78 104 24-14 25 14-25 15-24-15Z" fill="#45ddff" stroke="#98f5ff" stroke-width="2"></path>
+          <path d="M78 104v27l24 14v-26l-24-15Z" fill="#3976ff" stroke="#76baff" stroke-width="2"></path>
+          <path d="M102 119v26l25-14v-27l-25 15Z" fill="url(#print-cube)" stroke="#b28aff" stroke-width="2"></path>
+          <path d="M71 158h47" stroke="#42e6ff" stroke-width="3" stroke-linecap="round" opacity=".8"></path>
+          <rect x="126" y="73" width="5" height="15" rx="2.5" fill="#759ff0"></rect>
+          <rect x="49" y="75" width="4" height="22" rx="2" fill="#29487f"></rect>
+          <circle cx="137" cy="158" r="3" fill="#4ddcff"></circle>
+        </svg>
+      </div>
+      <div class="hero-copy">
+        <h1>PrintCost <span>3D</span></h1>
+        <p>Descubra o custo real e o preço ideal<br class="desktop-break"> da sua impressão.</p>
+      </div>
+      <ul class="hero-benefits" aria-label="Benefícios da calculadora">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M20 13 11 22l-8-8 9-9h8v8Z"></path>
+            <circle cx="16" cy="8" r="1.5"></circle>
+          </svg>
+          <span>Mais precisão<br>nos seus preços</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 20h4V11H4zM10 20h4V6h-4zM16 20h4V3h-4z"></path>
+          </svg>
+          <span>Impressões<br>mais lucrativas</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="m12 2 2.1 2.1 3-.1.9 2.8 2.5 1.6-.8 2.9.8 2.9-2.5 1.6-.9 2.8-3-.1L12 21l-2.1-2.1-3 .1-.9-2.8-2.5-1.6.8-2.9-.8-2.9L6 7.2l.9-2.8 3 .1L12 2Z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+          <span>Decisões baseadas<br>em dados</span>
+        </li>
+      </ul>
+      <div class="theme-control">
+        <button class="theme-option" id="theme-toggle" type="button" aria-label="Alterar para tema escuro" title="Alterar para tema escuro">
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+          </svg>
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M20.2 15.1A8.6 8.6 0 0 1 8.9 3.8 8.8 8.8 0 1 0 20.2 15.1Z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <form class="calculator-form" id="calculator-form">
+      <section class="panel filament-panel" aria-labelledby="filamento-title">
+        <header class="panel-heading">
+          <span class="icon icon-filament" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="7.5"></circle>
+              <circle cx="12" cy="12" r="2.3"></circle>
+              <path d="M5.7 8h3.1M15.2 8h3.1M5.7 16h3.1m6.4 0h3.1"></path>
+            </svg>
+          </span>
+          <span class="heading-copy">
+            <h2 id="filamento-title">Filamento</h2>
+            <span class="panel-description">Informe o valor que você paga no filamento.</span>
+          </span>
+          <span class="heading-hint">Use o valor por kg do filamento que você utiliza.</span>
+        </header>
+        <div class="panel-content">
+          <div class="field-group">
+            <label for="preco-filamento">Preço do filamento por kg</label>
+            <div class="input-shell">
+              <span class="input-addon">R$</span>
+              <input id="preco-filamento" name="preco-filamento" type="number" min="0" step="0.01" placeholder="Ex.: 80,00" required>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="impressao-title">
+        <header class="panel-heading">
+          <span class="icon icon-print" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"></path>
+              <path d="m4.5 7.7 7.5 4.4 7.5-4.4M12 12.1V21"></path>
+            </svg>
+          </span>
+          <span class="heading-copy">
+            <h2 id="impressao-title">Impressão</h2>
+            <span class="panel-description">Informe a quantidade de material e o tempo estimado.</span>
+          </span>
+        </header>
+        <div class="panel-content field-grid">
+          <div class="field-group">
+            <label for="material">Material utilizado</label>
+            <div class="input-shell">
+              <input id="material" name="material" type="number" min="0.1" step="0.1" placeholder="Ex.: 120" required>
+              <span class="input-addon">g</span>
+            </div>
+          </div>
+          <div class="field-group">
+            <label for="duracao">Tempo de impressão</label>
+            <div class="input-shell">
+              <input id="duracao" name="duracao" type="number" min="0" step="0.1" placeholder="Ex.: 5" required>
+              <span class="input-addon">horas</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="energia-title">
+        <header class="panel-heading">
+          <span class="icon icon-energy" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M13.2 2.8 5.5 13h5.7l-.5 8.2L18.5 11h-5.7l.4-8.2Z"></path>
+            </svg>
+          </span>
+          <span class="heading-copy">
+            <h2 id="energia-title">Energia</h2>
+            <span class="panel-description">Calcule o custo de energia da sua impressão.</span>
+          </span>
+        </header>
+        <div class="panel-content field-grid">
+          <div class="field-group">
+            <label for="taxa-energia">Tarifa de energia (R$/kWh)</label>
+            <div class="input-shell">
+              <span class="input-addon">R$</span>
+              <input id="taxa-energia" name="taxa-energia" type="number" min="0" step="0.01" placeholder="Ex.: 0,95" required>
+            </div>
+          </div>
+          <div class="field-group">
+            <label for="consumo">Consumo da impressora</label>
+            <div class="input-shell">
+              <input id="consumo" name="consumo" type="number" min="0" step="1" placeholder="Ex.: 110" required>
+              <span class="input-addon">W</span>
+            </div>
+          </div>
+          <p class="examples"><span aria-hidden="true">ⓘ</span> Ex: Ender 3: 110 W&nbsp; • &nbsp;Prusa i3 MK3: 180 W&nbsp; • &nbsp;Bambu Lab A1: 95 W</p>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="lucro-title">
+        <header class="panel-heading">
+          <span class="icon icon-profit" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="m6 18 12-12"></path>
+              <circle cx="7.5" cy="7.5" r="2.5"></circle>
+              <circle cx="16.5" cy="16.5" r="2.5"></circle>
+            </svg>
+          </span>
+          <span class="heading-copy">
+            <h2 id="lucro-title">Margem de lucro</h2>
+            <span class="panel-description">Defina sua margem para chegar ao preço ideal.</span>
+          </span>
+        </header>
+        <div class="panel-content">
+          <div class="field-group margin-field">
+            <label for="margem">Margem desejada</label>
+            <div class="input-shell">
+              <input id="margem" name="margem" type="number" min="0" step="1" placeholder="Ex.: 50" required>
+              <span class="input-addon">%</span>
+            </div>
+          </div>
+          <p class="examples"><span aria-hidden="true">ⓘ</span> Inclua seu tempo, desgaste e outros custos no preço final.</p>
+        </div>
+      </section>
+
+      <button class="calculate-button" type="submit">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="5" y="3" width="14" height="18" rx="2"></rect>
+          <path d="M8 7h8M8 11h2m4 0h2m-8 4h2m4 0h2m-8 3h2m4 0h2"></path>
+        </svg>
+        Calcular custo e preço
+      </button>
+
+      <section class="result-panel" id="result" aria-labelledby="result-title" aria-live="polite" hidden>
+        <h2 id="result-title">Resultados</h2>
+        <dl class="result-breakdown">
+          <div>
+            <dt>Consumo de filamento:</dt>
+            <dd id="filament-cost"></dd>
+          </div>
+          <div>
+            <dt>Consumo de energia elétrica:</dt>
+            <dd id="energy-cost"></dd>
+          </div>
+        </dl>
+        <p class="cost-per-gram">
+          <span>Cada grama da sua peça custará:</span>
+          <strong id="cost-per-gram"></strong>
+        </p>
+        <p class="result-total">
+          <span>Custo total:</span>
+          <strong id="total-cost"></strong>
+        </p>
+        <p class="suggested-price">
+          <span>Considerando suas despesas e margem de lucro você deverá cobrar:</span>
+          <strong id="suggested-price"></strong>
+        </p>
+      </section>
+    </form>
+    <footer class="site-footer">
+      <p>
+        Desenvolvido por <strong>João Antônio</strong> acesse:
+        <a href="https://github.com/jooaoantoniio" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
